@@ -2,7 +2,7 @@ pipelines:
   default:
     - step:
         name: Deploy to Google Cloud
-        deployment: prod
+        deployment: production
         script:
           - pipe: atlassian/google-app-engine-deploy:0.7.0
             variables:
