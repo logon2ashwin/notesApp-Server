@@ -33,7 +33,7 @@ module.exports = (function () {
             if (!util.checkJsonKeyExists(config, 'app.port')) {
                 throw new configError.configMissingError('app port');
             }
-            return config.app.port;
+            return process.env.PORT || config.app.port;
         }
     }
 })();

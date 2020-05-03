@@ -1,0 +1,20 @@
+pipelines:
+  default:
+    - step:
+        name: Deploy to Google Cloud
+        deployment: prod
+        trigger: manual
+        script:
+          - pipe: atlassian/google-app-engine-deploy:0.7.0
+            variables:
+              KEY_FILE: $KEY_FILE
+              PROJECT: $PROJECT
+              STOP_PREVIOUS_VERSION: 'true'
+              DEPLOYABLES: 'app.yaml'
+              VERSION: ${BITBUCKET_BUILD_NUMBER}
+              PROMOTE: 'true' # Optional
+              # BUCKET: '<string>' # Optional.
+              # IMAGE: '<string>' # Optional.
+              # EXTRA_ARGS: '<string>' # Optional.
+              # DEBUG: '<boolean>' # Optional.
+              # CLOUD_BUILD_TIMEOUT: '<integer>' # Optional
