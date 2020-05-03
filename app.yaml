@@ -1,0 +1,7 @@
+service: to-do-app-backend-services
+runtime: nodejs10
+
+instance_class: F2
+
+env_variables:
+  ENVIRONMENT: "prod"
