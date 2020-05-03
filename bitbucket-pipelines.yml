@@ -3,7 +3,6 @@ pipelines:
     - step:
         name: Deploy to Google Cloud
         deployment: prod
-        trigger: manual
         script:
           - pipe: atlassian/google-app-engine-deploy:0.7.0
             variables:
