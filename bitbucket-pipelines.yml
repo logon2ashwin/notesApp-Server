@@ -1,5 +1,5 @@
 pipelines:
-  default:
+  production:
     - step:
         name: Deploy to Google Cloud
         deployment: production
