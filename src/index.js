@@ -1,6 +1,11 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser')
+const cors = require('cors');
+if(process.env.ENVIRONMENT === 'dev') {
+    app.use(cors());
+    app.options('*', cors());
+}
 
 const config = require('./services/config');
 
